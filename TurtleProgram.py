@@ -12,7 +12,7 @@ class retrievedatafromweb:
         print("Day's range - " ,tree.xpath('//td[@data-test="DAYS_RANGE-value"]/text()'))
         print("Ask Price - " ,tree.xpath('//td[@data-test="ASK-value"]/span/text()'))
         print("Bid Price - " ,tree.xpath('//td[@data-test="BID-value"]/span/text()'))
-
+        print("testing from atom...")
         return
 
     def retDatafromWeb(self,inpQuoteFor):
