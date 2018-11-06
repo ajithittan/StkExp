@@ -54,5 +54,5 @@ class retrievedatafromweb:
             print("Not a valid param")
         return urlParam
 
-objretdata = retrievedatafromweb()
-objretdata.retDatafromWeb("CURRENT")
+#objretdata = retrievedatafromweb()
+#objretdata.retDatafromWeb("CURRENT")
