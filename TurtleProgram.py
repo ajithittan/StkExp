@@ -14,22 +14,21 @@ class retrievedatafromweb:
         print("Bid Price - " ,tree.xpath('//td[@data-test="BID-value"]/span/text()'))
         return
 
-    def retDatafromWeb(self,inpQuoteFor):
+    def retDatafromWeb(self,inpQuoteFor,inpStk):
         urldef = ""
         listofItems = []
         urldef = self.retURLParam(inpQuoteFor)
         listofItems = self.retDataToRun(inpQuoteFor)
 
-        for eachdata in listofItems:
-            urldef = self.retURLParam(inpQuoteFor)
-            urldef = urldef.replace("XXXX",eachdata)
-            page = requests.get(urldef)
-            tree = html.fromstring(page.content)
-            print(eachdata)
-            print("Last Price - " ,tree.xpath('//td[@data-test="ASK-value"]/span/text()'))
-            print("Day's range - " ,tree.xpath('//td[@data-test="DAYS_RANGE-value"]/text()'))
-            print("Ask Price - " ,tree.xpath('//td[@data-test="ASK-value"]/span/text()'))
-            print("Bid Price - " ,tree.xpath('//td[@data-test="BID-value"]/span/text()'))
+        urldef = self.retURLParam(inpQuoteFor)
+        urldef = urldef.replace("XXXX",eachdata)
+        page = requests.get(urldef)
+        tree = html.fromstring(page.content)
+        print(eachdata)
+        print("Last Price - " ,tree.xpath('//td[@data-test="ASK-value"]/span/text()'))
+        print("Day's range - " ,tree.xpath('//td[@data-test="DAYS_RANGE-value"]/text()'))
+        print("Ask Price - " ,tree.xpath('//td[@data-test="ASK-value"]/span/text()'))
+        print("Bid Price - " ,tree.xpath('//td[@data-test="BID-value"]/span/text()'))
 
         return
 

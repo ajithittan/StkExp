@@ -6,11 +6,20 @@ class checkTriggers:
 
     def checkforsignificantchange (self,inpVal):
 
+        listofStks = retrievedatafromweb().retDataToRun(inpVal)
+
+        for eachstk in listofStks:
+            print("test...")
+
+        print("trigger....",listofStks)
+
+    def triggercondhit(self,inpStk):
+
         config = configparser.ConfigParser()
         config.read("configitems.ini")
 
         listofStks = retrievedatafromweb().retDataToRun(inpVal)
-        print("trigger....",listofStks)
 
-objretdata = checkTriggers()
-objretdata.checkforsignificantchange("CURRENT")
+
+#objretdata = checkTriggers()
+#objretdata.checkforsignificantchange("CURRENT")
