@@ -10,4 +10,15 @@ def index():
 @app.route('/test/<int:task_id>')
 def nextfunction(task_id):
     print("task_id",task_id)
-    return "Hello World of flask test"
+    return render_template('main.html')
+
+@app.route('/testajax')
+def json():
+    return render_template('main.html')
+
+@app.route('/background_process_test')
+def background_process_test():
+    print ("Hello")
+    stkinp = request.args.get('stk', 0, type=string)
+    print(stkinp)
+    return
