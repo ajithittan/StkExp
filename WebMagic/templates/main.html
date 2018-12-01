@@ -2,7 +2,9 @@
 <script type=text/javascript>
     $(function() {
       $('a#test').bind('click', function() {
-        $.getJSON('/background_process_test',
+        $.getJSON('/background_process_test', {
+          stkval: $('input[name="stk"]').val()
+        }
             function(data) {
           //do nothing
         });
@@ -10,7 +12,6 @@
       });
     });
 </script>
-
 
 <h1>Welcome James Bond!</h1>
 <div class='container'>

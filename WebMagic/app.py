@@ -19,4 +19,6 @@ def json():
 @app.route('/background_process_test')
 def background_process_test():
     print ("Hello")
-    return ("nothing")
+    stkinp = request.args.get('stk', 0, type=string)
+    print(stkinp)
+    return
